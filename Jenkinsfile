@@ -5,7 +5,7 @@ pipeline {
       steps {
         sh '''
           docker ps
-          docker ps -agent
+          docker ps -a
           docker images
           docker network create fa-net
           docker build -t fa-image .
@@ -13,7 +13,8 @@ pipeline {
           docker build -t fa-tester-image ./test
           docker run -d --name fa-tester --network fa-net fa-tester-image
         '''
-
+        sh 'docker logs fa-tester'
+        sh 'docker logs fa-cont'
       
       }
     }
