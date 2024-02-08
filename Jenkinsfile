@@ -23,6 +23,8 @@ pipeline {
   post {
     always {
       sh'''
+      docker ps
+      docker ps -a
       docker rm -f fa-cont
       docker rmi -f fa-image
       docker rm -f fa-tester
