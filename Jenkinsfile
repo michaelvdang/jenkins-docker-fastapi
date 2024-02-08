@@ -11,7 +11,7 @@ pipeline {
           docker network create fa-net
           docker build -t fa-image .
           docker run -d --name fa-cont --network fa-net fa-image
-          docker build -t fa-tester-image ./test
+          docker build -t fa-tester-image ./test-base
           docker run -d --name fa-tester --network fa-net fa-tester-image
         '''
         sh 'docker logs fa-tester'
