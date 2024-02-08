@@ -6,4 +6,4 @@ WORKDIR /
 
 COPY test.sh /test.sh
 
-CMD curl test.sh && cat output.txt
+CMD sh test.sh && cat output.txt
