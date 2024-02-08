@@ -2,7 +2,7 @@ FROM nginx:alpine
 
 WORKDIR /
 
-RUN sudo apt update && sudo apt install --yes curl
+RUN apt-get update && apt-get install --yes curl
 
 COPY test.sh /test.sh
 
