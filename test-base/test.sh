@@ -1,3 +1,4 @@
+mkdir -p data
 curl fa-cont:4000 > /data/output2.txt
 curl fa-cont:4000/static 
 curl fa-cont:4000/dynamic/Roman >> /data/output2.txt
